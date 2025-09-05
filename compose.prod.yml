@@ -3,10 +3,10 @@ services:
     container_name: podly_backend
     image: ghcr.io/jdrbc/podly_pure_podcasts-backend:${BACKEND_VARIANT:-latest}
     volumes:
-      - ./config:/app/config
-      - ./in:/app/in
-      - ./srv:/app/srv
-      - ./src/instance:/app/src/instance
+      - /mnt/vault/podly/config:/app/config
+      - /mnt/vault/in:/app/in
+      - /mnt/vault/podly/srv:/app/srv
+      - /mnt/vault/podly//src/instance:/app/src/instance
     ports:
       - 5002:5002
     environment:
